@@ -49,8 +49,7 @@ def redact_pdf(pipe, file):
                     img_data = pix.tobytes("png")
                     pil_image = Image.open(BytesIO(img_data))
                     
-                    # Apply OCR using pytesseract
-                    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+                    # Apply OCR using pytesseract (auto-detect path)
                     
                     # Convert PIL image to cv2 format for preprocessing
                     img_cv = cv2.cvtColor(np.array(pil_image), cv2.COLOR_RGB2BGR)
